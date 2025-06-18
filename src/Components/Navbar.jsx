@@ -32,24 +32,7 @@ function NavBar() {
         </Navbar.Collapse>
       </Container>
       <CartWidget />
-    </Navbar>
-    
-    
-    /*
-    <nav className="navbar">
-      <div className="navbar-logo">
-        <a href="Almacen"><img src={logo} alt="Logo Supermercado" className="navbar-logo-img" /></a> 
-      </div>
-      <div className='navbar-list'>
-      <ul className="navbar-links">
-        <li><a href="Almacen">Almacen</a></li>
-        <li><a href="Almacen">Verduleria</a></li>
-        <li><a href="Almacen">Pescaderia</a></li>
-      </ul>
-      </div>
-          <CartWidget />
-    </nav>
-    */
+    </Navbar> 
   );
 }
 

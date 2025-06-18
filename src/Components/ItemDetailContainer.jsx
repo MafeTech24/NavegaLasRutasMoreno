@@ -10,15 +10,25 @@ function ItemDetailContainer() {
       .then(res => res.json())
       .then(data => setProducto(data))
       .catch(err => console.error('Error al cargar producto:', err));
-  }, [id]);  
+  }, [id]);
+
+   if (!producto) {
+    return <p className="text-center mt-5">Cargando producto...</p>;
+  }
 
   return (
     <div className="container mt-4">
-      <h2>{producto.title}</h2>
-      <img src={producto.image} alt={producto.title} style={{ maxWidth: '200px' }} />
-      <p>{producto.description}</p>
-      <p><strong>Precio:</strong> ${producto.price}</p>
-      <p><strong>Categoría:</strong> {producto.category}</p>
+      <div className="row">
+        <div className="col-md-5">
+          <img src={producto.image} alt={producto.title} className="img-fluid" />
+        </div>
+        <div className="col-md-7">
+          <h2>{producto.title}</h2>
+          <p>{producto.description}</p>
+          <h4 className="text-success">${producto.price}</h4>
+          <p><strong>Categoría:</strong> {producto.category}</p>
+        </div>
+      </div>
     </div>
   );
 }
